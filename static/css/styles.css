@@ -290,6 +290,7 @@ input:focus, select:focus, textarea:focus {
 .nav-dropdown {
   min-width: 12rem; 
   background: rgba(255, 255, 255, 0.96); 
+  
   backdrop-filter: blur(18px); 
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(212, 175, 55, 0.15);
@@ -297,7 +298,7 @@ input:focus, select:focus, textarea:focus {
 .nav-dropdown a {
   display: block; 
   padding: 0.75rem 1rem; 
-  color: #111827; 
+  color: white;
   text-decoration: none;
 }
 .nav-dropdown a:hover {
