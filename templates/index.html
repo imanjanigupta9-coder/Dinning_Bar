@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% block title %}index | AVYUKT VIEW{% endblock %}
+{% block content %}
+<main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+  <section id="home" class="rounded-[40px] overflow-hidden bg-white text-black shadow-2xl hero-section reveal" data-reveal-delay="0">
+    <div class="grid gap-10 lg:grid-cols-[0.9fr_0.8fr] items-center p-8 md:p-12">
+      <div class="space-y-6 center-mobile">
+<p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Dining & Bar</p>
+        <h1 class="text-4xl md:text-5xl font-serif leading-tight">Elevated dining and bar experiences at AVYUKT VIEW.</h1>
+        <p class="max-w-2xl text-base text-black">Discover our signature restaurant and elegant bar. Enjoy curated menus, premium cocktails, and a relaxed atmosphere perfect for every occasion.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="{{ booking_link }}?service=dining-bar" class="inline-flex items-center justify-center rounded-full book-now-btn px-6 py-3 text-sm font-semibold">Book Dining & Bar</a>
+          <a href="#services" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition">See the menu</a>
+        </div>
+        <div class="inline-flex flex-wrap items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90 shadow-sm">
+          <span class="inline-flex items-center gap-2">⭐ 4.9 guest rating</span>
+          <span class="inline-flex items-center gap-2">🍷 Premium cocktails</span>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="hero-image-card rounded-[32px] overflow-hidden shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80" alt="Dining interior" class="w-full object-cover h-80 transition duration-700 ease-out transform hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x800/fff1e5/3d2d21?text=Dining+Image';" />
+          <div class="hero-image-overlay"></div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+            <h2 class="font-semibold text-xl text-white mb-3">Fine dining</h2>
+            <p class="text-sm text-black">Savor chef-crafted menus with fresh local ingredients, elegant plating, and seamless service.</p>
+          </div>
+          <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm">
+            <h2 class="font-semibold text-xl text-white mb-3">Signature bar</h2>
+            <p class="text-sm text-black">Enjoy premium cocktails, wine pairings, and a stylish lounge setting for evening relaxation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10 reveal" data-reveal-delay="100">
+    <div class="grid gap-8 lg:grid-cols-[0.9fr_0.9fr] items-center">
+      <div class="space-y-6 center-mobile">
+        <span class="text-sm uppercase tracking-[0.3em] text-amber-600">Why choose dining with us</span>
+        <h2 class="text-3xl font-serif">A seamless dining experience for every guest.</h2>
+        <p class="text-neutral-600 max-w-2xl">Our restaurant and bar are built for travelers who value quality, comfort, and easy booking. Enjoy attentive service, refined menus, and a relaxed atmosphere.</p>
+        <a href="{{ booking_link }}?service=dining-bar" class="inline-flex items-center justify-center rounded-full book-now-btn px-6 py-3 text-sm font-semibold">Reserve Dining & Bar</a>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-[32px] bg-white p-6 shadow-sm border border-slate-200">
+          <h3 class="font-semibold text-xl text-slate-900 mb-3">Fast booking</h3>
+          <p class="text-slate-600 text-sm">Reserve your dining experience with one click and receive confirmation instantly.</p>
+        </div>
+        <div class="rounded-[32px] bg-white p-6 shadow-sm border border-slate-200">
+          <h3 class="font-semibold text-xl text-slate-900 mb-3">Modern lounge</h3>
+          <p class="text-slate-600 text-sm">Enjoy our bar lounge with a relaxed vibe, premium drinks, and attentive service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners" class="py-16 bg-slate-50 reveal" data-reveal-delay="150">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-8 md:p-10">
+          <div class="max-w-2xl mx-auto text-center">
+            <h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">Our partners</h3>
+            <p class="mt-3 text-sm md:text-base text-slate-500">Trusted by 25,000+ world-class brands and organizations of all sizes.</p>
+          </div>
+
+          <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-12">
+            <div class="flex items-center justify-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg" alt="Booking.com" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/booking.svg';" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/expedia.svg" alt="Expedia" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/d/df/Expedia_Logo.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/agoda-1.svg" alt="Agoda" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/c/ca/Agoda_logo.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="Airbnb" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/airbnb.svg';" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hotelsdotcom.svg" alt="Hotels.com" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/1/16/Hotels.com_Logo_2023.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/tripadvisor.svg" alt="TripAdvisor" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/0/02/Tripadvisor_Logo.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/trivago.svg" alt="Trivago" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/b/b3/Trivago_logo.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="/static/images/makemytrip-logo.svg" alt="MakeMyTrip" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section id="services" class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10 reveal" data-reveal-delay="200">
+    <div class="text-center mb-10">
+      <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Menu highlights</p>
+      <h2 class="text-3xl font-serif">A curated dining experience for every meal.</h2>
+      <p class="text-neutral-600 max-w-2xl mx-auto mt-3">From thoughtfully plated dinners to craft cocktails, our restaurant and bar are designed to delight guests throughout their stay.</p>
+    </div>
+    <div class="grid gap-6 lg:grid-cols-3">
+      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
+        <h3 class="font-semibold text-xl mb-3">Chef's Signature Plates</h3>
+        <p class="text-neutral-600 mb-4">Enjoy menus built around the freshest seasonal produce and vibrant local flavors.</p>
+        <ul class="space-y-2 text-sm text-neutral-600">
+          <li>• Seasonal tasting menu</li>
+          <li>• Local and international favorites</li>
+          <li>• Comfortable table service</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
+        <h3 class="font-semibold text-xl mb-3">Cocktails & Wine</h3>
+        <p class="text-neutral-600 mb-4">Relax with handcrafted cocktails, curated wines, and premium spirits in a warm bar atmosphere.</p>
+        <ul class="space-y-2 text-sm text-neutral-600">
+          <li>• Premium cocktails</li>
+          <li>• Wine pairings</li>
+          <li>• Nightly lounge service</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
+        <h3 class="font-semibold text-xl mb-3">Private bookings</h3>
+        <p class="text-neutral-600 mb-4">Reserve a table for dinner, group dining, or a special celebration with tailored service.</p>
+        <ul class="space-y-2 text-sm text-neutral-600">
+          <li>• Table reservations</li>
+          <li>• Group dining support</li>
+          <li>• Direct booking link</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="gallery" class="mt-8 rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10 reveal" data-reveal-delay="250">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-serif">Cocktails & Bites</h3>
+        <p class="mt-2 text-slate-600/85">Exotic drinks and signature plates curated for sharing.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1514361892637-9dcd5aa1300d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Golden Negroni</h4>
+            <p class="text-sm text-slate-600">A luxurious twist on the classic, with a hint of saffron and citrus.</p>
+          </div>
+        </article>
+        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Smoked Old Fashioned</h4>
+            <p class="text-sm text-slate-600">Oak-smoked bourbon, demerara, orange bitters.</p>
+          </div>
+        </article>
+        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Truffle Mushroom Tart</h4>
+            <p class="text-sm text-slate-600">A savory bite with seasonal mushrooms and shaved truffle.</p>
+          </div>
+        </article>
+        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Citrus Breeze</h4>
+            <p class="text-sm text-slate-600">Refreshing tequila cocktail with yuzu and basil.</p>
+          </div>
+        </article>
+        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Seared Tuna Tataki</h4>
+            <p class="text-sm text-slate-600">Lightly seared tuna with sesame and ponzu.</p>
+          </div>
+        </article>
+        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1525327644511-85c7c79f0c4b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Dark Chocolate Mousse</h4>
+            <p class="text-sm text-slate-600">Velvety mousse with sea salt and orange zest.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="offers" class="mt-10 rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10 reveal" data-reveal-delay="300">
+    <div class="text-center mb-8">
+      <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Offers</p>
+      <h2 class="text-3xl font-serif">What’s more with dining at AVYUKT VIEW</h2>
+      <p class="mx-auto mt-3 max-w-2xl text-slate-600">Special curated experiences, seasonal promotions, and exclusive dining offers designed for every occasion.</p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3 mb-10">
+      <div class="rounded-[32px] border border-slate-200 bg-white p-5 text-center shadow-sm">
+        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xl">✨</div>
+        <h3 class="font-semibold text-lg">Seasonal menus</h3>
+        <p class="mt-2 text-sm text-slate-600">Fresh, locally inspired dishes that change with the season.</p>
+      </div>
+      <div class="rounded-[32px] border border-slate-200 bg-white p-5 text-center shadow-sm">
+        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xl">🍸</div>
+        <h3 class="font-semibold text-lg">Cocktail hour</h3>
+        <p class="mt-2 text-sm text-slate-600">Evening drinks and bar bites with curated happy hour perks.</p>
+      </div>
+      <div class="rounded-[32px] border border-slate-200 bg-white p-5 text-center shadow-sm">
+        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xl">🎉</div>
+        <h3 class="font-semibold text-lg">Private events</h3>
+        <p class="mt-2 text-sm text-slate-600">Bespoke dining experiences for celebrations and small groups.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <article class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
+        <span class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-700">Limited time</span>
+        <h3 class="mt-5 text-xl font-semibold">Weekend Tasting Menu</h3>
+        <p class="mt-3 text-sm text-slate-600">Enjoy a 5-course tasting journey with wine pairings every Friday and Saturday evening.</p>
+        <a href="{{ booking_link }}?offer=tasting-menu" class="mt-6 inline-flex items-center justify-center rounded-full book-now-btn px-5 py-3 text-sm font-semibold">Reserve now</a>
+      </article>
+      <article class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
+        <span class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-700">Exclusive</span>
+        <h3 class="mt-5 text-xl font-semibold">Cocktail Hour</h3>
+        <p class="mt-3 text-sm text-slate-600">Enjoy handcrafted cocktails and bar bites with 2-for-1 offers from 5pm to 7pm daily.</p>
+        <a href="{{ booking_link }}?offer=cocktail-hour" class="mt-6 inline-flex items-center justify-center rounded-full book-now-btn px-5 py-3 text-sm font-semibold">Book a table</a>
+      </article>
+      <article class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
+        <span class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-700">Special</span>
+        <h3 class="mt-5 text-xl font-semibold">Private Dining</h3>
+        <p class="mt-3 text-sm text-slate-600">Create a private dining experience for celebrations, events or small groups with bespoke menus.</p>
+        <a href="{{ booking_link }}?offer=private-dining" class="mt-6 inline-flex items-center justify-center rounded-full book-now-btn px-5 py-3 text-sm font-semibold">Enquire now</a>
+      </article>
+    </div>
+  </section>
+</main>
+{% endblock %}
