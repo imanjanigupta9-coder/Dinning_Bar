@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Book an Elite Table | AVYUKT VIEW{% endblock %}
+
+{% block content %}
+<div class="py-16 bg-gray-50 min-h-[80vh] flex items-center">
+    <div class="max-w-md mx-auto px-4 w-full">
+        
+        <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden text-center">
+            <!-- Header Accent Banner -->
+            <div class="bg-black text-white px-6 py-8">
+                <span class="text-amber-500 uppercase tracking-[0.2em] text-xs block mb-1">Premium Hosting</span>
+                <h1 class="font-serif text-3xl">Table Reservations</h1>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-8 space-y-6">
+                <p class="text-neutral-600 text-sm leading-relaxed">
+                    To maintain absolute premium safety standards, real-time desk assignment, and immediate seat booking, our lounge layout is managed directly via our premium allocation partner.
+                </p>
+
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 text-left space-y-3">
+                    <div class="flex items-start gap-3 text-sm text-neutral-700">
+                        <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                        <span>Zero upfront booking reservation fees.</span>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm text-neutral-700">
+                        <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                        <span>Select specialized zones (Rooftop, Bar Side, Lounge).</span>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm text-neutral-700">
+                        <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                        <span>Instant SMS and Email confirmation tickets.</span>
+                    </div>
+                </div>
+
+                <!-- PASTE COMPANY'S PURCHASED BOOKING BACKEND LINK HERE -->
+                <div class="pt-2">
+                    <a href="https://your-purchased-booking-backend-link.com" target="_blank" rel="noopener noreferrer" class="w-full block bg-amber-600 hover:bg-amber-500 text-white font-semibold py-4 rounded-xl transition duration-300 tracking-wide text-sm shadow-md">
+                        Find an Open Table Now <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                    </a>
+                    <p class="text-[11px] text-neutral-400 mt-3">Modifications or cancellations can be processed anytime using your confirmation code.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

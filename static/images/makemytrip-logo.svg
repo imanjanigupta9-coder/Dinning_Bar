@@ -1,0 +1,14 @@
+<svg width="240" height="40" viewBox="0 0 240 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MakeMyTrip logo">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .logo-text { font-family: Inter, system-ui, sans-serif; font-weight: 800; font-size: 20px; fill: #0054A4; }
+      .logo-accent { font-family: Inter, system-ui, sans-serif; font-weight: 800; font-size: 20px; fill: #FFFFFF; }
+      .logo-bg { fill: #E2001A; }
+    ]]></style>
+  </defs>
+  <rect x="0" y="8" width="60" height="24" rx="6" fill="none" />
+  <rect x="75" y="3" width="38" height="34" rx="10" class="logo-bg" />
+  <text x="0" y="27" class="logo-text">make</text>
+  <text x="82" y="27" class="logo-accent">my</text>
+  <text x="118" y="27" class="logo-text">trip</text>
+</svg>

@@ -1,63 +1,110 @@
 {% extends "base.html" %}
-{% block title %}index | AVYUKT VIEW{% endblock %}
+
+{% block title %}The Dining & Cocktail Lounge | AVYUKT VIEW{% endblock %}
+
+{% block extra_head %}
+<style>
+  body { background: #f8fafc !important; color: #111827 !important; }
+</style>
+{% endblock %}
+
 {% block content %}
-<main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
-  <section id="home" class="rounded-[40px] overflow-hidden bg-white text-black shadow-2xl hero-section reveal" data-reveal-delay="0">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_0.8fr] items-center p-8 md:p-12">
-      <div class="space-y-6 center-mobile">
-<p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Dining & Bar</p>
-        <h1 class="text-4xl md:text-5xl font-serif leading-tight">Elevated dining and bar experiences at AVYUKT VIEW.</h1>
-        <p class="max-w-2xl text-base text-black">Discover our signature restaurant and elegant bar. Enjoy curated menus, premium cocktails, and a relaxed atmosphere perfect for every occasion.</p>
-        <div class="flex flex-wrap gap-3">
-          <a href="{{ booking_link }}?service=dining-bar" class="inline-flex items-center justify-center rounded-full book-now-btn px-6 py-3 text-sm font-semibold">Book Dining & Bar</a>
-          <a href="#services" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition">See the menu</a>
-        </div>
-        <div class="inline-flex flex-wrap items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90 shadow-sm">
-          <span class="inline-flex items-center gap-2">⭐ 4.9 guest rating</span>
-          <span class="inline-flex items-center gap-2">🍷 Premium cocktails</span>
-        </div>
-      </div>
-      <div class="space-y-4">
-        <div class="hero-image-card rounded-[32px] overflow-hidden shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80" alt="Dining interior" class="w-full object-cover h-80 transition duration-700 ease-out transform hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x800/fff1e5/3d2d21?text=Dining+Image';" />
-          <div class="hero-image-overlay"></div>
-        </div>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
-            <h2 class="font-semibold text-xl text-white mb-3">Fine dining</h2>
-            <p class="text-sm text-black">Savor chef-crafted menus with fresh local ingredients, elegant plating, and seamless service.</p>
-          </div>
-          <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm">
-            <h2 class="font-semibold text-xl text-white mb-3">Signature bar</h2>
-            <p class="text-sm text-black">Enjoy premium cocktails, wine pairings, and a stylish lounge setting for evening relaxation.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="bg-gradient-to-b from-[#fdfbf7] to-[#f1f5f9] min-h-screen text-neutral-900 antialiased">
 
-  <section id="about" class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10 reveal" data-reveal-delay="100">
-    <div class="grid gap-8 lg:grid-cols-[0.9fr_0.9fr] items-center">
-      <div class="space-y-6 center-mobile">
-        <span class="text-sm uppercase tracking-[0.3em] text-amber-600">Why choose dining with us</span>
-        <h2 class="text-3xl font-serif">A seamless dining experience for every guest.</h2>
-        <p class="text-neutral-600 max-w-2xl">Our restaurant and bar are built for travelers who value quality, comfort, and easy booking. Enjoy attentive service, refined menus, and a relaxed atmosphere.</p>
-        <a href="{{ booking_link }}?service=dining-bar" class="inline-flex items-center justify-center rounded-full book-now-btn px-6 py-3 text-sm font-semibold">Reserve Dining & Bar</a>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-[32px] bg-white p-6 shadow-sm border border-slate-200">
-          <h3 class="font-semibold text-xl text-slate-900 mb-3">Fast booking</h3>
-          <p class="text-slate-600 text-sm">Reserve your dining experience with one click and receive confirmation instantly.</p>
-        </div>
-        <div class="rounded-[32px] bg-white p-6 shadow-sm border border-slate-200">
-          <h3 class="font-semibold text-xl text-slate-900 mb-3">Modern lounge</h3>
-          <p class="text-slate-600 text-sm">Enjoy our bar lounge with a relaxed vibe, premium drinks, and attentive service.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ==========================================
+     CRYSTAL GLASS HERO INTRO MODULE (#home)
+     ========================================== -->
+<section id="home" class="relative min-h-[65vh] md:min-h-[80vh] flex items-center justify-center bg-cover bg-center px-4 py-8 md:py-16" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=100');">
+    
+    <!-- Linear Gradient Ambient Ambiance Dimmer Overlay Layer -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50 pointer-events-none"></div>
 
-  <section id="partners" class="py-16 bg-slate-50 reveal" data-reveal-delay="150">
+  
+    <div class="relative z-10 w-full max-w-lg md:max-w-2xl mx-auto bg-black/15 backdrop-blur-md -webkit-backdrop-blur-md border border-white/20 p-5 sm:p-8 md:p-12 rounded-[24px] md:rounded-[36px] shadow-2xl shadow-black/30 transition-all duration-500">
+        
+        <!-- Typography Content Engine Layout -->
+        <div class="text-left md:text-center space-y-4 md:space-y-5">
+            
+            <!-- Category Core Header Tag Line -->
+            <span class="text-amber-400 tracking-[0.25em] md:tracking-[0.35em] uppercase text-[9px] md:text-xs font-bold block [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
+                <i class="fa-solid fa-gem mr-1 text-[9px] md:text-[10px]"></i> Epicurean Lounge & Mixology
+            </span>
+            
+            <!-- Premium Identity Heading Cover Title -->
+            <h1 class="font-serif text-2xl sm:text-3xl md:text-5xl text-white tracking-tight leading-[1.2] md:leading-tight font-semibold [text-shadow:0_4px_12px_rgba(0,0,0,0.95)]">
+                Where Flavor Meets <span class="text-amber-400 font-normal italic block sm:inline-block mt-0.5 sm:mt-0">Sophistication</span>
+            </h1>
+            
+            <!-- Luxury Gold Divider Asset Line -->
+            <div class="w-10 h-0.5 bg-amber-400 md:mx-auto shadow-sm"></div>
+            
+            <!-- Informational Context Copy Description Block -->
+            <p class="text-white font-medium md:font-light text-xs sm:text-sm md:text-base max-w-xl md:mx-auto leading-relaxed [text-shadow:0_2px_8px_rgba(0,0,0,0.9)]">
+                Experience masterfully crafted molecular mixology, custom-zoned dining setups, and premium real-time table seating allocation at AVYUKT VIEW.
+            </p>
+            
+            <!-- Fully Responsive Core Call To Action Routing Group -->
+            <div class="flex flex-col sm:flex-row gap-2.5 justify-start md:justify-center pt-3 md:pt-4">
+                
+                <!-- Main External Hosting Direct Button Link Core -->
+                <a href="#reservation-wizard" class="crystal-btn text-[11px] md:text-xs px-5 md:px-6 py-3 md:py-3.5 font-bold tracking-wider text-center uppercase shadow-lg shadow-amber-500/20 transition-all duration-300 w-full sm:w-auto">
+                    <i class="fa-solid fa-chair mr-1.5"></i>Book An Elite Table
+                </a>
+                
+                <!-- Alternative Presentation Layer Section Target Link -->
+                <a href="#menu-canvas" class="bg-black/40 hover:bg-black/60 text-white border border-white/30 font-bold px-5 md:px-6 py-3 md:py-3.5 rounded-full text-[11px] md:text-xs tracking-wider text-center uppercase transition-all backdrop-blur-sm w-full sm:w-auto flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-utensils text-[10px] md:text-xs text-amber-400"></i> Explore Menu & Orders
+                </a>
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+    <!-- ==========================================
+         ABOUT LEGACY SECTION (#about)
+         ========================================== -->
+   <section id="about" class="py-12 md:py-24 bg-white border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        
+        <div class="space-y-4 md:space-y-6 text-left">
+            <span class="text-amber-600 tracking-widest uppercase text-[10px] md:text-xs font-bold block">
+                <i class="fa-solid fa-history mr-1 text-[9px] md:text-[11px]"></i> Our Legacy
+            </span>
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-900 leading-tight font-semibold">
+                Crafting Masterpieces in <span class="text-amber-600 font-normal italic">Absolute Ambiance</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-500"></div>
+            
+            <div class="space-y-3 md:space-y-4 text-slate-600 font-normal md:font-light text-xs sm:text-sm md:text-base leading-relaxed">
+                <p>
+                    At AVYUKT VIEW Dining & Bar, we blend gourmet molecular mixology with comfort. Every plate showcases fresh organic accents balanced with international culinary insights, explicitly prepared for the refined palate.
+                </p>
+                <p>
+                    Whether you are gathering next to our interactive counter for a handcrafted old-fashioned or dining on our sweeping rooftops, we transform every service entry into luxury hospitality.
+                </p>
+            </div>
+        </div>
+        
+        <div class="w-[85%] sm:w-[75%] md:w-full mx-auto grid grid-cols-2 gap-3 md:gap-4 pt-4 md:pt-0">
+            <div class="overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-md h-36 sm:h-44 md:h-56">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" 
+                     class="hover:scale-105 transition duration-500 w-full h-full object-cover" 
+                     alt="Interior lounge">
+            </div>
+            
+            <div class="overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-md mt-4 md:mt-8 h-36 sm:h-44 md:h-56">
+                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=600&q=80" 
+                     class="hover:scale-105 transition duration-500 w-full h-full object-cover" 
+                     alt="Platter preparation">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="partners" class="py-16 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6">
         <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-8 md:p-10">
           <div class="max-w-2xl mx-auto text-center">
@@ -94,140 +141,587 @@
         </div>
       </div>
     </section>
+    
 
-  <section id="services" class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10 reveal" data-reveal-delay="200">
-    <div class="text-center mb-10">
-      <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Menu highlights</p>
-      <h2 class="text-3xl font-serif">A curated dining experience for every meal.</h2>
-      <p class="text-neutral-600 max-w-2xl mx-auto mt-3">From thoughtfully plated dinners to craft cocktails, our restaurant and bar are designed to delight guests throughout their stay.</p>
-    </div>
-    <div class="grid gap-6 lg:grid-cols-3">
-      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
-        <h3 class="font-semibold text-xl mb-3">Chef's Signature Plates</h3>
-        <p class="text-neutral-600 mb-4">Enjoy menus built around the freshest seasonal produce and vibrant local flavors.</p>
-        <ul class="space-y-2 text-sm text-neutral-600">
-          <li>• Seasonal tasting menu</li>
-          <li>• Local and international favorites</li>
-          <li>• Comfortable table service</li>
-        </ul>
-      </article>
-      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
-        <h3 class="font-semibold text-xl mb-3">Cocktails & Wine</h3>
-        <p class="text-neutral-600 mb-4">Relax with handcrafted cocktails, curated wines, and premium spirits in a warm bar atmosphere.</p>
-        <ul class="space-y-2 text-sm text-neutral-600">
-          <li>• Premium cocktails</li>
-          <li>• Wine pairings</li>
-          <li>• Nightly lounge service</li>
-        </ul>
-      </article>
-      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
-        <h3 class="font-semibold text-xl mb-3">Private bookings</h3>
-        <p class="text-neutral-600 mb-4">Reserve a table for dinner, group dining, or a special celebration with tailored service.</p>
-        <ul class="space-y-2 text-sm text-neutral-600">
-          <li>• Table reservations</li>
-          <li>• Group dining support</li>
-          <li>• Direct booking link</li>
-        </ul>
-      </article>
-    </div>
-  </section>
+    <!-- ==========================================
+         SERVICES WORKSPACE (#services)
+         ========================================== -->
+   <section id="services" class="py-14 md:py-24 bg-slate-50/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-left md:text-center max-w-xl md:mx-auto mb-10 md:mb-16">
+            <span class="text-amber-600 tracking-widest uppercase text-[10px] md:text-xs font-bold block mb-2">
+                <i class="fa-solid fa-star mr-1 text-[9px] md:text-[11px]"></i> Exquisite Offerings
+            </span>
+            <h2 class="font-serif text-3xl md:text-4xl text-gray-900 font-semibold">
+                Curated Lounge Spaces & <span class="text-amber-600 font-normal italic">Facilities</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-500 mt-3 md:mx-auto"></div>
+        </div>
 
-  <section id="gallery" class="mt-8 rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10 reveal" data-reveal-delay="250">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-8">
-        <h3 class="text-2xl font-serif">Cocktails & Bites</h3>
-        <p class="mt-2 text-slate-600/85">Exotic drinks and signature plates curated for sharing.</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1514361892637-9dcd5aa1300d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Golden Negroni</h4>
-            <p class="text-sm text-slate-600">A luxurious twist on the classic, with a hint of saffron and citrus.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Smoked Old Fashioned</h4>
-            <p class="text-sm text-slate-600">Oak-smoked bourbon, demerara, orange bitters.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Truffle Mushroom Tart</h4>
-            <p class="text-sm text-slate-600">A savory bite with seasonal mushrooms and shaved truffle.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Citrus Breeze</h4>
-            <p class="text-sm text-slate-600">Refreshing tequila cocktail with yuzu and basil.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Seared Tuna Tataki</h4>
-            <p class="text-sm text-slate-600">Lightly seared tuna with sesame and ponzu.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1525327644511-85c7c79f0c4b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Dark Chocolate Mousse</h4>
-            <p class="text-sm text-slate-600">Velvety mousse with sea salt and orange zest.</p>
-          </div>
-        </article>
-      </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            
+            <div class="section-card p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-slate-100 space-y-3 md:space-y-4 group text-left">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-lg md:text-xl group-hover:bg-amber-500 group-hover:text-black transition-all">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h3 class="font-serif text-lg md:text-xl font-semibold text-gray-900">Fine Dining Room</h3>
+                <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-light">
+                    An elegant journey of artisanal dishes, premium locally sourced organic accents, and custom plating styles.
+                </p>
+            </div>
+            
+            <div class="section-card p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-slate-100 space-y-3 md:space-y-4 group text-left">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-lg md:text-xl group-hover:bg-amber-500 group-hover:text-black transition-all">
+                    <i class="fa-solid fa-glass-martini-alt"></i>
+                </div>
+                <h3 class="font-serif text-lg md:text-xl font-semibold text-gray-900">Artisanal Bar Lounge</h3>
+                <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-light">
+                    Signature cocktails, craft micro-brews, and an exclusive vintage selection of spirits handled by master mixologists.
+                </p>
+            </div>
+            
+            <div class="section-card p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-slate-100 space-y-3 md:space-y-4 group text-left">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-lg md:text-xl group-hover:bg-amber-500 group-hover:text-black transition-all">
+                    <i class="fa-solid fa-building-user"></i>
+                </div>
+                <h3 class="font-serif text-lg md:text-xl font-semibold text-gray-900">Private Gala Vaults</h3>
+                <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-light">
+                    Beautifully isolated luxury environments engineered for corporate entertaining, family celebrations, and intimate dinners.
+                </p>
+            </div>
+            
+        </div>
     </div>
-  </section>
+</section>
+    <!-- ==========================================
+         CORE EXPERIENCE 1 & 3: TABBED MENU & INTERACTIVE CART (#offers)
+         ========================================== -->
+    <section id="offers" class="py-12 md:py-24 bg-white border-t border-b border-slate-100">
+    <div id="menu-canvas" class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 md:mb-12 gap-6 text-left">
+            <div class="space-y-2">
+                <span class="text-amber-600 tracking-widest uppercase text-[10px] md:text-xs font-bold block">
+                    <i class="fa-solid fa-book-open mr-1 text-[9px] md:text-[11px]"></i> Interactive Catalog
+                </span>
+                <h2 class="font-serif text-3xl md:text-4xl text-gray-900 font-semibold">
+                    Exploration & <span class="text-amber-600 font-normal italic">Online Pre-Ordering</span>
+                </h2>
+                <div class="w-12 h-0.5 bg-amber-500 mt-2"></div>
+            </div>
+            
+            <div class="flex flex-wrap gap-1.5 bg-slate-100 p-1 rounded-xl border border-slate-200/60 text-[11px] md:text-xs max-w-full overflow-x-auto custom-scroll">
+                <button onclick="toggleMenuCategory('all')" id="tab-all" class="filter-tab-active px-3 md:px-4 py-2 rounded-lg text-slate-600 font-medium transition-all whitespace-nowrap">All Selections</button>
+                <button onclick="toggleMenuCategory('spirits')" id="tab-spirits" class="px-3 md:px-4 py-2 rounded-lg text-slate-600 font-medium transition-all whitespace-nowrap">Curated Spirits</button>
+                <button onclick="toggleMenuCategory('cocktails')" id="tab-cocktails" class="px-3 md:px-4 py-2 rounded-lg text-slate-600 font-medium transition-all whitespace-nowrap">Signature Cocktails</button>
+                <button onclick="toggleMenuCategory('cuisine')" id="tab-cuisine" class="px-3 md:px-4 py-2 rounded-lg text-slate-600 font-medium transition-all whitespace-nowrap">Global Fusion</button>
+            </div>
+        </div>
 
-  <section id="offers" class="mt-10 rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10 reveal" data-reveal-delay="300">
-    <div class="text-center mb-8">
-      <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Offers</p>
-      <h2 class="text-3xl font-serif">What’s more with dining at AVYUKT VIEW</h2>
-      <p class="mx-auto mt-3 max-w-2xl text-slate-600">Special curated experiences, seasonal promotions, and exclusive dining offers designed for every occasion.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            
+            <div class="lg:col-span-2 space-y-4">
+                
+                <div class="menu-display-card bg-slate-50/50 p-4 md:p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-amber-500/30 transition-all text-left" data-cat="spirits">
+                    <div class="flex-1 space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-semibold text-gray-900 text-sm md:text-base tracking-tight">Glenfiddich Vintage Reserve</h4>
+                            <span class="w-2 h-2 rounded-full bg-red-500 shrink-0" title="Contains Alcohol"></span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">Single malt scotch whiskey matured across 21 years in premium bourbon oak barrels.</p>
+                        <span class="text-amber-600 font-semibold text-sm block pt-1">₹1,250 <span class="text-[10px] text-slate-400 font-normal">/ 30ml shot</span></span>
+                    </div>
+                    <button onclick="pushToBasket('Glenfiddich 21 Single Malt', 1250)" class="w-full sm:w-auto shrink-0 bg-white hover:bg-amber-500 border border-slate-200 hover:border-amber-500 text-gray-800 hover:text-black text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1">
+                        Add <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+
+                <div class="menu-display-card bg-slate-50/50 p-4 md:p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-amber-500/30 transition-all text-left" data-cat="cocktails">
+                    <div class="flex-1 space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-semibold text-gray-900 text-sm md:text-base tracking-tight">The Crimson Horizon</h4>
+                            <span class="w-2 h-2 rounded-full bg-red-500 shrink-0" title="Contains Alcohol"></span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">Aged dark rum infused with artisanal hibiscus reductions and hand-charred rosemary smoke plumes.</p>
+                        <span class="text-amber-600 font-semibold text-sm block pt-1">₹550</span>
+                    </div>
+                    <button onclick="pushToBasket('The Crimson Horizon', 550)" class="w-full sm:w-auto shrink-0 bg-white hover:bg-amber-500 border border-slate-200 hover:border-amber-500 text-gray-800 hover:text-black text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1">
+                        Add <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+
+                <div class="menu-display-card bg-slate-50/50 p-4 md:p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-amber-500/30 transition-all text-left" data-cat="cuisine">
+                    <div class="flex-1 space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-semibold text-gray-900 text-sm md:text-base tracking-tight">Gourmet Truffle Mushroom Sliders</h4>
+                            <span class="w-2 h-2 rounded-full bg-green-600 shrink-0" title="Vegetarian Item"></span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">Shiitake mushroom steaks caramelized in rich truffle glaze, covered in aged melted provolone on fresh bakery brioche.</p>
+                        <span class="text-amber-600 font-semibold text-sm block pt-1">₹420</span>
+                    </div>
+                    <button onclick="pushToBasket('Truffle Mushroom Sliders', 420)" class="w-full sm:w-auto shrink-0 bg-white hover:bg-amber-500 border border-slate-200 hover:border-amber-500 text-gray-800 hover:text-black text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1">
+                        Add <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+
+                <div class="menu-display-card bg-slate-50/50 p-4 md:p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-amber-500/30 transition-all text-left" data-cat="cuisine">
+                    <div class="flex-1 space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-semibold text-gray-900 text-sm md:text-base tracking-tight">Peri-Peri Charred King Prawns</h4>
+                            <span class="w-2 h-2 rounded-full bg-red-600 shrink-0" title="Non-Veg Item"></span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">Giant gulf prawns flash-seared over glowing woodfire logs, basted in African bird's eye chili reductions.</p>
+                        <span class="text-amber-600 font-semibold text-sm block pt-1">₹580</span>
+                    </div>
+                    <button onclick="pushToBasket('Peri-Peri Charred Prawns', 580)" class="w-full sm:w-auto shrink-0 bg-white hover:bg-amber-500 border border-slate-200 hover:border-amber-500 text-gray-800 hover:text-black text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1">
+                        Add <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="lg:sticky lg:top-24 bg-white border border-slate-200 shadow-xl rounded-2xl p-5 space-y-4 mt-4 lg:mt-0 text-left">
+                <h3 class="font-serif text-lg text-gray-900 pb-3 border-b border-slate-100 flex items-center justify-between">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-basket-shopping text-amber-600 text-sm"></i> Pre-Order Basket</span>
+                    <span id="lbl-cart-count" class="bg-amber-100 text-amber-800 text-xs px-2.5 py-0.5 rounded-full font-bold">0 Items</span>
+                </h3>
+                
+                <div id="basket-dynamic-stack" class="space-y-2 text-xs text-slate-400 italic max-h-48 overflow-y-auto custom-scroll">
+                    Your pre-order collection is empty.
+                </div>
+
+                <div class="border-t border-slate-100 pt-3 space-y-2 text-xs text-slate-600">
+                    <div class="flex justify-between"><span>Subtotal</span><span id="lbl-subtotal" class="font-medium text-gray-900">₹0</span></div>
+                    <div class="flex justify-between"><span>GST & Service Charge (18%)</span><span id="lbl-tax" class="font-medium text-gray-900">₹0</span></div>
+                    <div class="flex justify-between text-gray-900 font-bold text-sm border-t border-dashed border-slate-200 pt-2">
+                        <span>Total Estimate</span><span id="lbl-total" class="text-amber-600 text-base">₹0</span>
+                    </div>
+                </div>
+
+                <form action="https://your-purchased-ordering-backend-checkout-url.com" method="GET" target="_blank" onsubmit="return verifyBasketData()">
+                    <input type="hidden" name="basket_payload" id="basket_hidden_field">
+                    <div class="mb-3">
+                        <input type="text" placeholder="Table Number (Leave blank if pre-ordering)" class="w-full text-xs bg-slate-50 border border-slate-200 p-3 rounded-xl focus:outline-none focus:border-amber-500 text-gray-900">
+                    </div>
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-amber-600 text-white hover:text-black text-xs font-bold py-3.5 rounded-xl transition duration-300 uppercase tracking-wider shadow-md flex items-center justify-center gap-2">
+                        Forward Order to Backend <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                    </button>
+                </form>
+            </div>
+            
+        </div>
     </div>
-    <div class="grid gap-4 md:grid-cols-3 mb-10">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-5 text-center shadow-sm">
-        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xl">✨</div>
-        <h3 class="font-semibold text-lg">Seasonal menus</h3>
-        <p class="mt-2 text-sm text-slate-600">Fresh, locally inspired dishes that change with the season.</p>
-      </div>
-      <div class="rounded-[32px] border border-slate-200 bg-white p-5 text-center shadow-sm">
-        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xl">🍸</div>
-        <h3 class="font-semibold text-lg">Cocktail hour</h3>
-        <p class="mt-2 text-sm text-slate-600">Evening drinks and bar bites with curated happy hour perks.</p>
-      </div>
-      <div class="rounded-[32px] border border-slate-200 bg-white p-5 text-center shadow-sm">
-        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xl">🎉</div>
-        <h3 class="font-semibold text-lg">Private events</h3>
-        <p class="mt-2 text-sm text-slate-600">Bespoke dining experiences for celebrations and small groups.</p>
-      </div>
+</section>
+
+  <section id="reservation-wizard" class="py-16 md:py-28 bg-slate-50/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-12">
+            <span class="text-amber-600 tracking-widest uppercase text-[10px] md:text-xs font-bold block mb-1">
+                <i class="fa-solid fa-map-location-dot mr-1"></i> Floor Management Panel
+            </span>
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-900 font-semibold leading-tight">
+                Table Layout & <span class="text-amber-600 font-normal italic">Live Desk Assignment</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-500 mt-3 md:mx-auto mb-4"></div>
+            <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                Review our comprehensive 40-table layout across premium Rooftop, Bar Counter, and luxury Booth configurations. Select any active **Vacant** card to assign it to your booking wizard, or manually toggle occupancy states on the fly.
+            </p>
+            
+            <div class="flex items-center justify-start md:justify-center gap-3 mt-5 text-xs font-semibold">
+                <span class="bg-emerald-50 text-emerald-700 px-4 py-1.5 rounded-full border border-emerald-200 shadow-sm flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Vacant (Available): <span id="vacant-count" class="font-bold">40</span>
+                </span>
+                <span class="bg-slate-100 text-slate-600 px-4 py-1.5 rounded-full border border-slate-300/60 shadow-sm">
+                    Full (Booked): <span id="booked-count" class="font-bold">0</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-8 text-xs justify-start md:justify-center">
+            <button onclick="filterFloorMap('all')" id="zone-btn-all" class="filter-tab-active px-5 py-2.5 rounded-xl font-semibold border border-slate-200 transition-all shadow-sm">All Zones (40 Tables)</button>
+            <button onclick="filterFloorMap('rooftop')" id="zone-btn-rooftop" class="bg-white hover:bg-slate-50 text-slate-700 px-5 py-2.5 rounded-xl font-semibold border border-slate-200 transition-all shadow-sm"><i class="fa-solid fa-cloud mr-1 text-amber-500"></i> Sky Rooftop</button>
+            <button onclick="filterFloorMap('bar_counter')" id="zone-btn-bar_counter" class="bg-white hover:bg-slate-50 text-slate-700 px-5 py-2.5 rounded-xl font-semibold border border-slate-200 transition-all shadow-sm"><i class="fa-solid fa-glass-citrus mr-1 text-amber-500"></i> Bar Counter</button>
+            <button onclick="filterFloorMap('booths')" id="zone-btn-booths" class="bg-white hover:bg-slate-50 text-slate-700 px-5 py-2.5 rounded-xl font-semibold border border-slate-200 transition-all shadow-sm"><i class="fa-solid fa-couch mr-1 text-amber-500"></i> Luxury Booths</button>
+        </div>
+
+        <div class="bg-white p-5 md:p-8 rounded-3xl border border-slate-200 shadow-inner mb-14">
+            <div id="table-floor-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[480px] overflow-y-auto pr-2 custom-scroll">
+                </div>
+            
+            <div class="text-[11px] text-slate-400 mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 justify-end font-medium">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-toggle-on text-emerald-500 text-sm"></i> Click the switch button inside any card to toggle Vacant / Full instantly.</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
+            <div class="lg:col-span-7 bg-white border border-slate-200/80 rounded-3xl shadow-xl p-4 sm:p-10 text-left space-y-6">
+                <div>
+                    <h3 class="font-serif text-2xl md:text-3xl text-gray-900 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check text-amber-600"></i> Reserve Your Table
+                    </h3>
+                    <p class="text-[11px] md:text-xs text-slate-400 mt-1">Your selected table details will automatically populate when clicking an available card above.</p>
+                </div>
+                
+                <form id="live-booking-form" action="https://your-purchased-booking-backend-link.com" method="GET" target="_blank" class="space-y-5">
+                    
+                    <div class="grid grid-cols-2 gap-3 md:gap-5">
+                        
+                        <div class="space-y-1 md:space-y-1.5">
+                            <label class="block text-[10px] md:text-xs uppercase tracking-wider text-slate-500 font-bold truncate">Selected Unit</label>
+                            <input type="text" name="assigned_table_id" id="assigned_table_id" placeholder="Tap a table" class="w-full text-xs md:text-sm font-mono font-bold text-amber-600 border-amber-300 bg-amber-50/20 p-3 md:p-4 rounded-xl shadow-sm focus:ring-4 focus:ring-amber-500/20" readonly required>
+                        </div>
+                        
+                        <div class="space-y-1 md:space-y-1.5">
+                            <label class="block text-[10px] md:text-xs uppercase tracking-wider text-slate-500 font-bold truncate">Floor Zone</label>
+                            <input type="text" name="assigned_zone" id="assigned_zone" placeholder="No zone mapped" class="w-full text-xs md:text-sm font-sans font-semibold text-slate-700 bg-slate-50 p-3 md:p-4 rounded-xl shadow-sm" readonly required>
+                        </div>
+
+                        <div class="space-y-1 md:space-y-1.5">
+                            <label class="block text-[10px] md:text-xs uppercase tracking-wider text-slate-500 font-bold truncate">Your Name</label>
+                            <input type="text" name="guest_name" placeholder="Enter full name" class="w-full text-xs md:text-sm p-3 md:p-4 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-500/20 shadow-sm" required>
+                        </div>
+
+                        <div class="space-y-1 md:space-y-1.5">
+                            <label class="block text-[10px] md:text-xs uppercase tracking-wider text-slate-500 font-bold truncate">Email Address</label>
+                            <input type="email" name="guest_email" placeholder="name@company.com" class="w-full text-xs md:text-sm p-3 md:p-4 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-500/20 shadow-sm" required>
+                        </div>
+
+                        <div class="space-y-1 md:space-y-1.5">
+                            <label class="block text-[10px] md:text-xs uppercase tracking-wider text-slate-500 font-bold truncate">Phone Number</label>
+                            <input type="tel" name="guest_phone" placeholder="Contact Mobile" class="w-full text-xs md:text-sm p-3 md:p-4 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-500/20 shadow-sm" required>
+                        </div>
+
+                        <div class="space-y-1 md:space-y-1.5">
+                            <label class="block text-[10px] md:text-xs uppercase tracking-wider text-slate-500 font-bold truncate">Total Guests</label>
+                            <select name="guest_count" class="w-full text-xs md:text-sm p-3 md:p-4 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-500/20 shadow-sm" required>
+                                <option value="2">2 Persons</option>
+                                <option value="4">4 Persons</option>
+                                <option value="6">6 Persons</option>
+                                <option value="8">8+ Vault</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1 md:space-y-1.5">
+                            <label class="block text-[10px] md:text-xs uppercase tracking-wider text-slate-500 font-bold truncate">Target Date</label>
+                            <input type="date" name="booking_date" class="w-full text-xs md:text-sm p-3 md:p-4 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-500/20 shadow-sm" required>
+                        </div>
+
+                        <div class="space-y-1 md:space-y-1.5">
+                            <label class="block text-[10px] md:text-xs uppercase tracking-wider text-slate-500 font-bold truncate">Target Time</label>
+                            <input type="time" name="booking_time" class="w-full text-xs md:text-sm p-3 md:p-4 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-500/20 shadow-sm" required>
+                        </div>
+
+                    </div>
+
+                    <div class="pt-4 md:pt-6">
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-black font-bold py-4 md:py-6 px-4 md:px-8 rounded-xl md:rounded-2xl text-xs md:text-base uppercase tracking-[0.15em] md:tracking-[0.2em] transition-all duration-300 shadow-xl shadow-slate-900/10 hover:shadow-amber-500/20 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 md:gap-3">
+                            <i class="fa-solid fa-circle-check text-sm md:text-lg"></i> Confirm & Book Table Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="lg:col-span-5 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-5 text-left h-full flex flex-col justify-between">
+                <div class="space-y-4">
+                    <h4 class="font-serif text-xl md:text-2xl text-gray-900 font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-amber-600"></i> Why Reserve With Us?
+                    </h4>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                        Our booking system checks table availability in real-time and assigns the best table based on your group size and preferred zone.
+                    </p>
+                    <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700 pt-2">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-amber-600 mt-1 shrink-0 text-base"></i><span><strong>Fast check-in:</strong> We hold your table and confirm instantly.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-amber-600 mt-1 shrink-0 text-base"></i><span><strong>Smart seating:</strong> We match capacity and zone automatically.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-amber-600 mt-1 shrink-0 text-base"></i><span><strong>Flexible dining:</strong> Choose rooftop, bar counter, or booth seating.</span></li>
+                    </ul>
+                </div>
+                <p class="text-[11px] sm:text-xs text-slate-400 italic pt-4 border-t border-slate-200/80 leading-relaxed mt-6">Current availability is shown for the active hour. If your preferred slot is booked, try a different time or zone.</p>
+            </div>
+            
+        </div>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <article class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-700">Limited time</span>
-        <h3 class="mt-5 text-xl font-semibold">Weekend Tasting Menu</h3>
-        <p class="mt-3 text-sm text-slate-600">Enjoy a 5-course tasting journey with wine pairings every Friday and Saturday evening.</p>
-        <a href="{{ booking_link }}?offer=tasting-menu" class="mt-6 inline-flex items-center justify-center rounded-full book-now-btn px-5 py-3 text-sm font-semibold">Reserve now</a>
-      </article>
-      <article class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-700">Exclusive</span>
-        <h3 class="mt-5 text-xl font-semibold">Cocktail Hour</h3>
-        <p class="mt-3 text-sm text-slate-600">Enjoy handcrafted cocktails and bar bites with 2-for-1 offers from 5pm to 7pm daily.</p>
-        <a href="{{ booking_link }}?offer=cocktail-hour" class="mt-6 inline-flex items-center justify-center rounded-full book-now-btn px-5 py-3 text-sm font-semibold">Book a table</a>
-      </article>
-      <article class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-700">Special</span>
-        <h3 class="mt-5 text-xl font-semibold">Private Dining</h3>
-        <p class="mt-3 text-sm text-slate-600">Create a private dining experience for celebrations, events or small groups with bespoke menus.</p>
-        <a href="{{ booking_link }}?offer=private-dining" class="mt-6 inline-flex items-center justify-center rounded-full book-now-btn px-5 py-3 text-sm font-semibold">Enquire now</a>
-      </article>
+</section>
+
+  <section id="gallery" class="py-14 md:py-24 bg-white border-t border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-left md:text-center max-w-xl md:mx-auto mb-10 md:mb-16">
+            <span class="text-amber-600 tracking-widest uppercase text-[10px] md:text-xs font-bold block mb-2">
+                <i class="fa-solid fa-images mr-1 text-[9px] md:text-[11px]"></i> Atmosphere Tour
+            </span>
+            <h2 class="font-serif text-3xl md:text-4xl text-gray-900 font-semibold">
+                Inside The <span class="text-amber-600 font-normal italic">AVYUKT Lounge</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-500 mt-3 md:mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            
+            <div class="gallery-card group overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-sm h-36 sm:h-44 md:h-64 relative">
+                <div class="absolute inset-0 bg-amber-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none flex items-center justify-center">
+                    <div class="bg-white/80 backdrop-blur-sm text-amber-800 w-8 h-8 rounded-full flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-500 shadow">
+                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80" 
+                     class="group-hover:scale-105 transition-transform duration-700 w-full h-full object-cover" 
+                     alt="Bar Ambiance Layout">
+            </div>
+            
+            <div class="gallery-card group overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-sm h-36 sm:h-44 md:h-64 relative">
+                <div class="absolute inset-0 bg-amber-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none flex items-center justify-center">
+                    <div class="bg-white/80 backdrop-blur-sm text-amber-800 w-8 h-8 rounded-full flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-500 shadow">
+                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=600&q=80" 
+                     class="group-hover:scale-105 transition-transform duration-700 w-full h-full object-cover" 
+                     alt="Premium Gourmet Platter">
+            </div>
+            
+            <div class="gallery-card group overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-sm h-36 sm:h-44 md:h-64 relative">
+                <div class="absolute inset-0 bg-amber-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none flex items-center justify-center">
+                    <div class="bg-white/80 backdrop-blur-sm text-amber-800 w-8 h-8 rounded-full flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-500 shadow">
+                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" 
+                     class="group-hover:scale-105 transition-transform duration-700 w-full h-full object-cover" 
+                     alt="Luxury Fine Dining Setup">
+            </div>
+            
+            <div class="gallery-card group overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-sm h-36 sm:h-44 md:h-64 relative">
+                <div class="absolute inset-0 bg-amber-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none flex items-center justify-center">
+                    <div class="bg-white/80 backdrop-blur-sm text-amber-800 w-8 h-8 rounded-full flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-500 shadow">
+                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?auto=format&fit=crop&w=600&q=80" 
+                     class="group-hover:scale-105 transition-transform duration-700 w-full h-full object-cover" 
+                     alt="Private Vault Seating Spaces">
+            </div>
+            
+        </div>
     </div>
-  </section>
-</main>
+</section>
+
+  
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // System Local Cart State Storage
+    let localBasket = [];
+
+    // Experience 1: Dynamic Frontend Categorization Filter Toggling
+    function toggleMenuCategory(catName) {
+        const categories = ['all', 'spirits', 'cocktails', 'cuisine'];
+        categories.forEach(c => {
+            document.getElementById(`tab-${c}`).classList.remove('filter-tab-active');
+        });
+        document.getElementById(`tab-${catName}`).classList.add('filter-tab-active');
+
+        const elements = document.querySelectorAll('.menu-display-card');
+        elements.forEach(el => {
+            if (catName === 'all' || el.getAttribute('data-cat') === catName) {
+                el.style.display = 'flex';
+            } else {
+                el.style.display = 'none';
+            }
+        });
+    }
+
+    // Experience 3: Real-Time Table Side Interactive Aggregator
+    function pushToBasket(title, rate) {
+        const target = localBasket.find(i => i.title === title);
+        if (target) {
+            target.quantity += 1;
+        } else {
+            localBasket.push({ title: title, rate: rate, quantity: 1 });
+        }
+        rebuildBasketDOM();
+    }
+
+    function pullFromBasket(index) {
+        localBasket.splice(index, 1);
+        rebuildBasketDOM();
+    }
+
+    function rebuildBasketDOM() {
+        const stackBox = document.getElementById('basket-dynamic-stack');
+        const badgeBox = document.getElementById('lbl-cart-count');
+        
+        if (localBasket.length === 0) {
+            stackBox.innerHTML = 'Your pre-order collection is empty.';
+            badgeBox.innerText = '0 Items';
+            document.getElementById('lbl-subtotal').innerText = '₹0';
+            document.getElementById('lbl-tax').innerText = '₹0';
+            document.getElementById('lbl-total').innerText = '₹0';
+            return;
+        }
+
+        stackBox.innerHTML = '';
+        let cumulativeSum = 0;
+        let cumulativeItems = 0;
+
+        localBasket.forEach((item, idx) => {
+            cumulativeSum += item.rate * item.quantity;
+            cumulativeItems += item.quantity;
+
+            stackBox.innerHTML += `
+                <div class="flex justify-between items-center bg-slate-50 p-3 rounded-xl border border-slate-100 font-sans">
+                    <div>
+                        <p class="font-semibold text-gray-800">${item.title}</p>
+                        <span class="text-[10px] text-slate-500 block mt-0.5">₹${item.rate} x ${item.quantity}</span>
+                    </div>
+                    <button onclick="pullFromBasket(${idx})" class="text-rose-500 hover:text-rose-700 transition px-1"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            `;
+        });
+
+        const taxAmount = Math.round(cumulativeSum * 0.18);
+        const netValue = cumulativeSum + taxAmount;
+
+        badgeBox.innerText = `${cumulativeItems} Items`;
+        document.getElementById('lbl-subtotal').innerText = `₹${cumulativeSum.toLocaleString('en-IN')}`;
+        document.getElementById('lbl-tax').innerText = `₹${taxAmount.toLocaleString('en-IN')}`;
+        document.getElementById('lbl-total').innerText = `₹${netValue.toLocaleString('en-IN')}`;
+        
+        document.getElementById('basket_hidden_field').value = JSON.stringify(localBasket);
+    }
+
+    function verifyBasketData() {
+        if (localBasket.length === 0) {
+            alert('Please select items from the menu options before dispatching data to the external app.');
+            return false;
+        }
+        return true;
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+    const floorCanvas = document.getElementById('table-floor-grid');
+    const zonesList = ['rooftop', 'bar_counter', 'booths'];
+    let injectedHTML = '';
+    
+    // Distribute 40 upscaled cards featuring explicit manual action toggle triggers
+    for (let i = 1; i <= 40; i++) {
+        let currentZone = zonesList[i % zonesList.length];
+        let zoneLabel = currentZone === 'rooftop' ? 'Rooftop' : (currentZone === 'bar_counter' ? 'Bar Counter' : 'Booths');
+        let maxCovers = i % 3 == 0 ? 6 : (i % 2 == 0 ? 4 : 2);
+        
+        injectedHTML += `
+            <div id="grid-table-card-${i}" 
+                 onclick="assignTableToWizard('${i}', '${zoneLabel}', '${currentZone}')"
+                 class="table-grid-unit select-none cursor-pointer border border-slate-200 bg-white p-4 rounded-xl shadow-sm flex flex-col justify-between h-40 border-l-4 border-l-emerald-500 transition-all hover:scale-[1.02]" 
+                 data-zone-group="${currentZone}" 
+                 data-status="vacant">
+                <div class="space-y-1">
+                    <div class="flex justify-between items-center">
+                        <span class="font-serif font-bold text-gray-900 text-base">Table T-${i}</span>
+                        <span id="badge-state-${i}" class="text-[9px] tracking-wide text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md font-bold uppercase border border-emerald-200">Vacant</span>
+                    </div>
+                    <span class="text-xs font-semibold text-amber-700 tracking-wider block">${zoneLabel}</span>
+                </div>
+                
+                <div class="pt-2 border-t border-slate-100 text-xs text-slate-500 space-y-2">
+                    <span class="block text-[10px] text-slate-400 font-light">${zoneLabel} Capacity ${maxCovers}</span>
+                    <button type="button" 
+                            onclick="event.stopPropagation(); toggleTableOccupancyState('${i}');" 
+                            id="toggle-btn-${i}"
+                            class="w-full text-[10px] bg-slate-100 text-slate-700 hover:bg-amber-500 hover:text-black font-bold py-1.5 px-2 rounded-md border border-slate-200 transition-all flex items-center justify-center gap-1">
+                        <i class="fa-solid fa-right-left text-[9px]"></i> Set to Full
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+    floorCanvas.innerHTML = injectedHTML;
+    recalculateDashboardMetrics();
+});
+
+function assignTableToWizard(id, zoneName, rawZone) {
+    const parentCard = document.getElementById(`grid-table-card-${id}`);
+    if (parentCard.getAttribute('data-status') === 'booked') {
+        alert(`Table T-${id} is currently fully occupied. Click the button inside the card to switch it to vacant first.`);
+        return;
+    }
+    
+    document.querySelectorAll('.table-grid-unit').forEach(el => el.classList.remove('ring-4', 'ring-amber-500/30', 'border-amber-400'));
+    parentCard.classList.add('ring-4', 'ring-amber-500/30', 'border-amber-400');
+
+    document.getElementById('assigned_table_id').value = `Table T-${id}`;
+    document.getElementById('assigned_zone').value = `${zoneName} Section`;
+
+    // Smooth Scroll directly to user input block
+    const targetFormWrapper = document.getElementById('live-booking-form');
+    targetFormWrapper.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+}
+
+function toggleTableOccupancyState(id) {
+    const card = document.getElementById(`grid-table-card-${id}`);
+    const badge = document.getElementById(`badge-state-${id}`);
+    const button = document.getElementById(`toggle-btn-${id}`);
+    const currentStatus = card.getAttribute('data-status');
+
+    if (currentStatus === 'vacant') {
+        card.setAttribute('data-status', 'booked');
+        card.classList.remove('border-l-emerald-500');
+        card.classList.add('border-l-slate-300', 'bg-slate-50/40', 'opacity-60');
+        badge.innerText = "Full";
+        badge.classList.remove('text-emerald-700', 'bg-emerald-50', 'border-emerald-200');
+        badge.classList.add('text-slate-500', 'bg-slate-100', 'border-slate-200');
+        
+        button.innerHTML = `<i class="fa-solid fa-right-left text-[9px]"></i> Set to Vacant`;
+        button.classList.remove('bg-slate-100', 'text-slate-700');
+        button.classList.add('bg-emerald-600', 'text-white', 'border-emerald-700', 'hover:bg-emerald-500');
+        
+        if (document.getElementById('assigned_table_id').value === `Table T-${id}`) {
+            document.getElementById('assigned_table_id').value = '';
+            document.getElementById('assigned_zone').value = '';
+            card.classList.remove('ring-4', 'ring-amber-500/30', 'border-amber-400');
+        }
+    } else {
+        card.setAttribute('data-status', 'vacant');
+        card.classList.remove('border-l-slate-300', 'bg-slate-50/40', 'opacity-60');
+        card.classList.add('border-l-emerald-500');
+        badge.innerText = "Vacant";
+        badge.classList.remove('text-slate-500', 'bg-slate-100', 'border-slate-200');
+        badge.classList.add('text-emerald-700', 'bg-emerald-50', 'border-emerald-200');
+        
+        button.innerHTML = `<i class="fa-solid fa-right-left text-[9px]"></i> Set to Full`;
+        button.classList.remove('bg-emerald-600', 'text-white', 'border-emerald-700', 'hover:bg-emerald-500');
+        button.classList.add('bg-slate-100', 'text-slate-700');
+    }
+    recalculateDashboardMetrics();
+}
+
+function recalculateDashboardMetrics() {
+    const totalTables = document.querySelectorAll('.table-grid-unit').length;
+    const bookedTables = document.querySelectorAll('.table-grid-unit[data-status="booked"]').length;
+    const vacantTables = totalTables - bookedTables;
+
+    document.getElementById('vacant-count').innerText = vacantTables;
+    document.getElementById('booked-count').innerText = bookedTables;
+}
+
+function filterFloorMap(targetZone) {
+    const keys = ['all', 'rooftop', 'bar_counter', 'booths'];
+    keys.forEach(k => document.getElementById(`zone-btn-${k}`).classList.remove('filter-tab-active'));
+    document.getElementById(`zone-btn-${targetZone}`).classList.add('filter-tab-active');
+
+    document.querySelectorAll('.table-grid-unit').forEach(card => {
+        if (targetZone === 'all' || card.getAttribute('data-zone-group') === targetZone) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+</script>
 {% endblock %}
