@@ -8,7 +8,7 @@ let localBasket = [];
 /**
  * 2. GLOBAL CHAT CLOSING CONSOLE OVERRIDE
  * Explicit handle declared outside lexical scopes so inline structural markup elements
- * (like your decorative close icon buttons) can execute minimizes seamlessly.
+ * can execute minimizes seamlessly.
  */
 function minimizeChatWidgetManually() {
     const widget = document.getElementById('chat-widget');
@@ -88,11 +88,11 @@ function rebuildBasketDOM() {
 
         stackBox.innerHTML += `
             <div class="flex justify-between items-center bg-slate-50 p-3 rounded-xl border border-slate-100 font-sans">
-                <div>
-                    <p class="font-semibold text-gray-800">${item.title}</p>
+                <div class="min-w-0 flex-1">
+                    <p class="font-semibold text-gray-800 truncate">${item.title}</p>
                     <span class="text-[10px] text-slate-500 block mt-0.5">₹${item.rate} x ${item.quantity}</span>
                 </div>
-                <button onclick="pullFromBasket(${idx})" class="text-rose-500 hover:text-rose-700 transition px-1">
+                <button onclick="pullFromBasket(${idx})" class="text-rose-500 hover:text-rose-700 transition px-1 shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                 </button>
             </div>
@@ -124,11 +124,15 @@ function filterFloorMap(targetZone) {
     const keys = ['all', 'rooftop', 'bar_counter', 'booths'];
     keys.forEach(k => {
         const btn = document.getElementById(`zone-btn-${k}`);
-        if (btn) btn.classList.remove('filter-tab-active');
+        if (btn) {
+            btn.className = "bg-white hover:bg-slate-50 text-slate-800 px-4 py-2.5 rounded-xl font-bold border border-slate-200 shadow-sm transition-all";
+        }
     });
     
     const activeBtn = document.getElementById(`zone-btn-${targetZone}`);
-    if (activeBtn) activeBtn.classList.add('filter-tab-active');
+    if (activeBtn) {
+        activeBtn.className = "px-4 py-2.5 rounded-xl font-bold border border-slate-900 bg-slate-900 text-white shadow-sm transition-all";
+    }
 
     document.querySelectorAll('.table-grid-unit').forEach(card => {
         if (targetZone === 'all' || card.getAttribute('data-zone-group') === targetZone) {
@@ -144,20 +148,24 @@ document.addEventListener('DOMContentLoaded', function() {
     /* ==========================================
        CORE LAYOUT NAVIGATION MECHANICS
        ========================================== */
-    const moreBtn = document.getElementById('moreBtn');
-    const moreDropdown = document.getElementById('moreDropdown');
+    const dropdownMenu = document.getElementById('moreDropdown');
+    const dropdownLinks = document.querySelectorAll('.dropdown-link');
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    // Click handler for more dropdown
-    moreBtn?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        moreDropdown?.classList.toggle('hidden');
-    });
-
-    // Prevent random closures when interacting inside dropdown card box links
-    moreDropdown?.addEventListener('click', (e) => {
-        e.stopPropagation();
+    // INTEGRATED HOVER CLOSURE FIX: Force menu hidden instantly on selecting links
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (dropdownMenu) {
+                dropdownMenu.style.display = 'none';
+                
+                // Clear inline style block once the mouse rolls completely away from container
+                dropdownMenu.parentElement.addEventListener('mouseleave', function handleLeave() {
+                    dropdownMenu.style.display = '';
+                    dropdownMenu.parentElement.removeEventListener('mouseleave', handleLeave);
+                });
+            }
+        });
     });
 
     mobileBtn?.addEventListener('click', () => {
@@ -167,16 +175,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto-close open navbar trays on clicking anchor jumps
     document.querySelectorAll('.menu-close-link, .mobile-nav-link').forEach(linkItem => {
         linkItem.addEventListener('click', () => {
-            moreDropdown?.classList.add('hidden');
             mobileMenu?.classList.add('hidden');
         });
-    });
-
-    // Clicking anywhere outside dropdown dismisses view cleanly
-    document.addEventListener('click', (e) => {
-        if (moreDropdown && !moreDropdown.classList.contains('hidden')) {
-            moreDropdown.classList.add('hidden');
-        }
     });
 
     /* ==========================================
@@ -257,6 +257,9 @@ document.addEventListener('DOMContentLoaded', function() {
        ========================================== */
     const floorCanvas = document.getElementById('table-floor-grid');
     if (floorCanvas) {
+        // FIXED RUNTIME GRIDS: Generates uniform, tighter dimensions across desktop layouts natively
+        floorCanvas.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 max-h-[440px] overflow-y-auto pr-1.5 custom-scroll";
+        
         const zonesList = ['rooftop', 'bar_counter', 'booths'];
         let injectedHTML = '';
         
@@ -268,24 +271,27 @@ document.addEventListener('DOMContentLoaded', function() {
             injectedHTML += `
                 <div id="grid-table-card-${i}" 
                      onclick="assignTableToWizard('${i}', '${zoneLabel}', '${currentZone}')"
-                     class="table-grid-unit select-none cursor-pointer border border-slate-200 bg-white p-4 rounded-xl shadow-sm flex flex-col justify-between h-40 border-l-4 border-l-emerald-500 transition-all hover:scale-[1.02]" 
+                     class="table-grid-unit aspect-square w-full md:max-w-[160px] mx-auto select-none cursor-pointer border border-slate-200 bg-white p-2.5 sm:p-4 rounded-2xl shadow-sm flex flex-col justify-between overflow-hidden relative min-w-0 border-l-4 border-l-emerald-500 transition-all hover:scale-[1.02]" 
                      data-zone-group="${currentZone}" 
                      data-status="vacant">
-                    <div class="space-y-1">
-                        <div class="flex justify-between items-center">
-                            <span class="font-serif font-bold text-gray-900 text-base">Table T-${i}</span>
-                            <span id="badge-state-${i}" class="text-[9px] tracking-wide text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md font-bold uppercase border border-emerald-200">Vacant</span>
+                    
+                    <div class="space-y-0.5 min-w-0 flex-1">
+                        <div class="flex justify-between items-center gap-1">
+                            <span class="font-serif font-bold text-gray-950 text-xs sm:text-sm truncate">Table T-\${i}</span>
+                            <span id="badge-state-\${i}" class="text-[7px] sm:text-[9px] tracking-wide text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-extrabold uppercase border border-emerald-200 shrink-0">Vacant</span>
                         </div>
-                        <span class="text-xs font-semibold text-amber-700 tracking-wider block">${zoneLabel}</span>
+                        <span class="text-[8px] sm:text-[10px] font-bold text-amber-700 tracking-wider block truncate">\${zoneLabel}</span>
+                        <p class="text-[8px] sm:text-xs text-gray-500 font-normal line-clamp-1 leading-tight">
+                            Cap: \${maxCovers} Max
+                        </p>
                     </div>
                     
-                    <div class="pt-2 border-t border-slate-100 text-xs text-slate-500 space-y-2">
-                        <span class="block text-[10px] text-slate-400 font-light">${zoneLabel} Capacity ${maxCovers}</span>
+                    <div class="pt-1.5 border-t border-slate-100 shrink-0 w-full">
                         <button type="button" 
-                                onclick="event.stopPropagation(); toggleTableOccupancyState('${i}');" 
-                                id="toggle-btn-${i}"
-                                class="w-full text-[10px] bg-slate-100 text-slate-700 hover:bg-amber-500 hover:text-black font-bold py-1.5 px-2 rounded-md border border-slate-200 transition-all flex items-center justify-center gap-1">
-                            <i class="fa-solid fa-right-left text-[9px]"></i> Set to Full
+                                onclick="event.stopPropagation(); toggleTableOccupancyState('\${i}');" 
+                                id="toggle-btn-\${i}"
+                                class="w-full text-center py-1 rounded-lg text-[8px] sm:text-[10px] font-bold tracking-wider uppercase transition-all duration-200 truncate bg-slate-100 text-slate-700 hover:bg-amber-500 hover:text-black border border-slate-200/80">
+                            Set Full
                         </button>
                     </div>
                 </div>
@@ -324,7 +330,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         Hello and welcome! I am your <strong>AVYUKT VIEW Digital Concierge</strong>. How can I assist you with your luxury dining experience today?
                     </div>
                 `;
-                // Render Tier 1 Core Conversation Starters
                 renderNewSuggestionPills([
                     "How do I choose and book a table?",
                     "Can I pre-order food and drinks?",
@@ -361,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let buttonsHTML = `<p class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider pl-1">Suggested Follow-ups:</p>`;
         questionsArray.forEach(q => {
-            buttonsHTML += `<button type="button" onclick="handlePresetQuestionClick('${q.replace(/'/g, "\\'")}')" class="w-full text-left bg-white border border-slate-200 hover:border-amber-500 text-gray-700 hover:text-black p-2 rounded-xl transition-all shadow-sm text-xs font-medium">${q}</button>`;
+            buttonsHTML += `<button type="button" onclick="handlePresetQuestionClick('\${q.replace(/'/g, "\\\\'")}')" class="w-full text-left bg-white border border-slate-200 hover:border-amber-500 text-gray-700 hover:text-black p-2 rounded-xl transition-all shadow-sm text-xs font-medium">\${q}</button>`;
         });
 
         pillsBox.innerHTML = buttonsHTML;
@@ -376,7 +381,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function processChatMessagePipeline(text) {
-        // Drop past context options
         document.getElementById('preset-questions-wrapper')?.remove();
 
         // 1. Render User Message Bubble
@@ -401,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ];
 
             if (checkText.includes('table') || checkText.includes('book') || checkText.includes('choose') || checkText.includes('reserve')) {
-                reply = "To secure your table, browse our real-time 40-table floor grid map above. Select any active green 'Vacant' card, and the system will populate the metrics and smoothly scroll down directly over your two-column booking form!";
+                reply = "To secure your table, browse our real-time 40-table floor grid map above. Select any active green 'Vacant' card, and the system will populate the metrics and smoothly scroll down directly over your booking form!";
                 nextQuestions = [
                     "Can I pre-order food and drinks?",
                     "What are your operating hours and location?",
@@ -447,8 +451,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             botBubble.innerText = reply;
             messagesContainer.appendChild(botBubble);
-            
-            // Append the fresh set of tailored contextual follow-up questions
             renderNewSuggestionPills(nextQuestions);
             
         }, 500);
@@ -460,11 +462,11 @@ document.addEventListener('DOMContentLoaded', function() {
    ========================================================================== */
 
 function assignTableToWizard(id, zoneName, rawZone) {
-    const parentCard = document.getElementById(`grid-table-card-${id}`);
+    const parentCard = document.getElementById(`grid-table-card-\${id}`);
     if (!parentCard) return;
     
     if (parentCard.getAttribute('data-status') === 'booked') {
-        alert(`Table T-${id} is currently fully occupied. Click the button inside the card to switch it to vacant first.`);
+        alert(`Table T-\${id} is currently fully occupied. Click the button inside the card to switch it to vacant first.`);
         return;
     }
     
@@ -476,8 +478,8 @@ function assignTableToWizard(id, zoneName, rawZone) {
     const inputTable = document.getElementById('assigned_table_id');
     const inputZone = document.getElementById('assigned_zone');
     
-    if (inputTable) inputTable.value = `Table T-${id}`;
-    if (inputZone) inputZone.value = `${zoneName} Section`;
+    if (inputTable) inputTable.value = `Table T-\${id}`;
+    if (inputZone) inputZone.value = `\${zoneName} Section`;
 
     const targetFormWrapper = document.getElementById('live-booking-form');
     targetFormWrapper?.scrollIntoView({
@@ -487,9 +489,9 @@ function assignTableToWizard(id, zoneName, rawZone) {
 }
 
 function toggleTableOccupancyState(id) {
-    const card = document.getElementById(`grid-table-card-${id}`);
-    const badge = document.getElementById(`badge-state-${id}`);
-    const button = document.getElementById(`toggle-btn-${id}`);
+    const card = document.getElementById(`grid-table-card-\${id}`);
+    const badge = document.getElementById(`badge-state-\${id}`);
+    const button = document.getElementById(`toggle-btn-\${id}`);
     if (!card || !badge || !button) return;
 
     const currentStatus = card.getAttribute('data-status');
@@ -502,12 +504,11 @@ function toggleTableOccupancyState(id) {
         badge.classList.remove('text-emerald-700', 'bg-emerald-50', 'border-emerald-200');
         badge.classList.add('text-slate-500', 'bg-slate-100', 'border-slate-200');
         
-        button.innerHTML = `<i class="fa-solid fa-right-left text-[9px]"></i> Set to Vacant`;
-        button.classList.remove('bg-slate-100', 'text-slate-700');
-        button.classList.add('bg-emerald-600', 'text-white', 'border-emerald-700', 'hover:bg-emerald-500');
+        button.innerText = `Set Vacant`;
+        button.className = "w-full text-center py-1 rounded-lg text-[8px] sm:text-[10px] font-bold tracking-wider uppercase transition-all duration-200 truncate bg-emerald-600 text-white hover:bg-emerald-500 border border-emerald-700";
         
         const inputTable = document.getElementById('assigned_table_id');
-        if (inputTable && inputTable.value === `Table T-${id}`) {
+        if (inputTable && inputTable.value === `Table T-\${id}`) {
             inputTable.value = '';
             const inputZone = document.getElementById('assigned_zone');
             if (inputZone) inputZone.value = '';
@@ -521,9 +522,8 @@ function toggleTableOccupancyState(id) {
         badge.classList.remove('text-slate-500', 'bg-slate-100', 'border-slate-200');
         badge.classList.add('text-emerald-700', 'bg-emerald-50', 'border-emerald-200');
         
-        button.innerHTML = `<i class="fa-solid fa-right-left text-[9px]"></i> Set to Full`;
-        button.classList.remove('bg-emerald-600', 'text-white', 'border-emerald-700', 'hover:bg-emerald-500');
-        button.classList.add('bg-slate-100', 'text-slate-700');
+        button.innerText = `Set Full`;
+        button.className = "w-full text-center py-1 rounded-lg text-[8px] sm:text-[10px] font-bold tracking-wider uppercase transition-all duration-200 truncate bg-slate-100 text-slate-700 hover:bg-amber-500 hover:text-black border border-slate-200";
     }
     window.recalculateDashboardMetrics();
 }
@@ -540,3 +540,40 @@ function recalculateDashboardMetrics() {
     if (bookedCountEl) bookedCountEl.innerText = bookedTables;
 }
 window.recalculateDashboardMetrics = recalculateDashboardMetrics;
+
+
+/* ==========================================================================
+   SOURCE MARKUP SYSTEM PROTECTION HOOKS
+   ========================================================================== */
+
+// 1. Disable Right-Click Context Menu completely
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+
+// 2. Disable DevTools and View-Source Keyboard Shortcuts
+document.addEventListener('keydown', function (event) {
+    // Block F12 Key
+    if (event.key === 'F12') {
+        event.preventDefault();
+        return false;
+    }
+
+    // Block Ctrl+Shift+I (Inspect), Ctrl+Shift+C (Element Select), Ctrl+Shift+J (Console)
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'i' || event.key === 'C' || event.key === 'c' || event.key === 'J' || event.key === 'j')) {
+        event.preventDefault();
+        return false;
+    }
+
+    // Block Ctrl+U (View Source)
+    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+        event.preventDefault();
+        return false;
+    }
+
+    // Block Ctrl+S (Save Page) to prevent downloading source files locally
+    if (event.ctrlKey && (event.key === 'S' || event.key === 's')) {
+        event.preventDefault();
+        return false;
+    }
+});

@@ -12,57 +12,66 @@
   <link rel="stylesheet" href="/static/css/styles.css">
   {% block extra_head %}{% endblock %}
 </head>
-<body class="antialiased text-neutral-900 bg-gradient-to-b from-white to-gray-50">
+<body class="antialiased text-slate-900 bg-white">
   
-  <header class="bg-black text-white shadow-sm sticky top-0 z-50 site-header">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2 md:px-5 md:py-3 header-inner">
-      <a href="https://hotel-website-uj63.onrender.com" class="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+  <header class="bg-black backdrop-blur-md border-b border-white/10  top-0 z-50 site-header transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2 md:px-6 md:py-3 header-inner">
+      
+      <a href="https://hotel-website-uj63.onrender.com" class="flex-shrink-0 flex items-center gap-2" target="_blank" rel="noopener noreferrer">
         {% if logo_image %}
-          <img src="{{ logo_image }}" alt="AVYUKT VIEW" class="h-14 md:h-16 object-contain logo-img nav-logo-img" onerror="this.style.display='none'" />
+          <img src="{{ logo_image }}" alt="AVYUKT VIEW" class="h-12 md:h-14 object-contain logo-img nav-logo-img transition-transform duration-300 hover:scale-102 filter brightness-110" />
         {% else %}
-          <img src="/static/images/avyukt_logo.png" alt="AVYUKT VIEW" class="h-14 md:h-16 object-contain logo-img nav-logo-img" onerror="this.style.display='none'" />
+          <img src="/static/images/avyukt_logo.png" alt="AVYUKT VIEW" class="h-12 md:h-14 object-contain logo-img nav-logo-img transition-transform duration-300 hover:scale-102" />
         {% endif %}
       </a>
 
-      <nav class="hidden md:flex items-center gap-3 text-[0.75rem] uppercase tracking-[0.24em]">
-        <a href="/" class="text-white transition hover:text-amber-500 py-2">Home</a>
-        <a href="#menu-catalog-section" class="text-white transition hover:text-amber-500 py-2">Menu</a>
-        <a href="#about" class="text-white transition hover:text-amber-500 py-2">About</a>
-        <a href="#partners" class="text-white transition hover:text-amber-500 py-2">Partners</a>        
-        <div class="relative">
-          <button id="moreBtn" type="button" class="flex items-center gap-2 text-white transition hover:text-amber-500 py-2" aria-haspopup="true" aria-expanded="false">
-            MORE <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i>
+      <nav class="hidden md:flex flex-1 justify-center items-center gap-6 text-[10px] uppercase tracking-[0.25em] font-bold text-white whitespace-nowrap">
+        <a href="/" class="transition text-white hover:text-amber-400 py-2">Home</a>
+        <a href="#menu-catalog-section" class="transition text-white hover:text-amber-400 py-2">Menu</a>
+        <a href="#gallery" class="transition text-white hover:text-amber-400 py-2">Gallery</a>
+        <a href="#about" class="transition text-white hover:text-amber-400 py-2">About</a>
+        
+        <div class="relative group py-2">
+          <button id="moreBtn" type="button" class="flex items-center gap-1.5 transition text-white hover:text-amber-400 focus:outline-none uppercase font-bold text-[10px] tracking-[0.25em]">
+            More <i class="fa-solid fa-chevron-down text-[8px] opacity-70 transition-transform duration-300 group-hover:rotate-180"></i>
           </button>
-          <div id="moreDropdown" class="nav-dropdown hidden absolute right-0 top-full rounded-2xl border border-white/10 bg-black/95 shadow-xl z-50 min-w-[160px] overflow-hidden py-1">
-            <a href="#offers" class="menu-close-link text-white hover:bg-white/10 block px-4 py-2.5 transition-all text-left">Offers</a>
-            <a href="#services" class="menu-close-link text-white hover:bg-white/10 block px-4 py-2.5 transition-all text-left">Services</a>
-            <a href="#gallery" class="menu-close-link text-white hover:bg-white/10 block px-4 py-2.5 transition-all text-left">Gallery</a>
-            <a href="#contact" class="mobile-nav-link uppercase text-white hover:text-amber-500 py-1">Contact</a>
-            <a href="https://hotel-website-uj63.onrender.com" class="text-white hover:bg-white/10 block px-4 py-2.5 transition-all text-left" target="_blank" rel="noopener noreferrer">Main Website</a>
+          
+          <div id="moreDropdown" class="nav-dropdown hidden group-hover:block absolute right-0 top-full rounded-xl border border-white/10 bg-neutral-900 shadow-2xl z-50 min-w-[180px] overflow-hidden py-1.5 transition-all">
+            <a href="#partners" class="dropdown-link menu-close-link block px-4 py-2.5 text-white hover:bg-white/5 hover:text-amber-400 transition-all font-medium normal-case tracking-normal text-xs">Partners</a>        
+            <a href="#offers" class="dropdown-link menu-close-link block px-4 py-2.5 text-white hover:bg-white/5 hover:text-amber-400 transition-all font-medium normal-case tracking-normal text-xs">Offers</a>
+            <a href="#services" class="dropdown-link menu-close-link block px-4 py-2.5 text-white hover:bg-white/5 hover:text-amber-400 transition-all font-medium normal-case tracking-normal text-xs">Services</a>
+            <a href="#contact" class="dropdown-link menu-close-link block px-4 py-2.5 text-white hover:bg-white/5 hover:text-amber-400 transition-all font-medium normal-case tracking-normal text-xs">Contact</a>
+            <div class="border-t border-white/5 my-1"></div>
+            <a href="https://hotel-website-uj63.onrender.com" class="dropdown-link block px-4 py-2.5 text-amber-400 bg-amber-500/5 hover:bg-amber-500/10 hover:text-amber-300 transition-all font-bold normal-case tracking-normal text-xs" target="_blank" rel="noopener noreferrer">Main Website</a>
           </div>
         </div>
       </nav>
 
-      <div class="flex items-center gap-2 md:gap-3">
-        <a href="{{ booking_link or '#' }}" data-i18n="book_now_button" class="book-now-btn px-3 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold">Book Now!</a>
-        <button id="mobile-menu-btn" class="md:hidden p-1.5 text-white" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="flex-shrink-0 flex items-center gap-2.5">
+        <a href="{{ booking_link or '#' }}" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-4 py-2 rounded-full text-xs transition-all tracking-wider shadow-sm hover:shadow active:scale-95">Book Now!</a>
+        <button id="mobile-menu-btn" class="md:hidden p-1.5 text-white focus:outline-none" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
     </div>
     
-    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black">
-      <div class="p-4 flex flex-col gap-3 text-sm">
-        <a href="#home" class="mobile-nav-link uppercase text-white hover:text-amber-500 py-1">Home</a>
-        <a href="#menu-catalog-section" class="text-white transition hover:text-amber-500 py-2">Menu</a>
-        <a href="#about" class="mobile-nav-link uppercase text-white hover:text-amber-500 py-1">About Us</a>
-        <a href="#partners" class="mobile-nav-link uppercase text-white hover:text-amber-500 py-1">Partners</a>
-        <details class="group rounded-xl bg-white/5 border border-white/10 p-2">
-          <summary class="uppercase text-white hover:text-amber-500 cursor-pointer py-1 px-2 select-none">Experience More</summary>
-          <div class="mt-2 flex flex-col gap-1 pl-2">
-            <a href="#offers" class="mobile-nav-link block rounded-xl px-4 py-2 text-white hover:bg-white/10">Offers</a>
-            <a href="#services" class="mobile-nav-link block rounded-xl px-4 py-2 text-white hover:bg-white/10">Services</a>
-            <a href="#gallery" class="mobile-nav-link block rounded-xl px-4 py-2 text-white hover:bg-white/10">Gallery</a>
-            <a href="#contact" class="mobile-nav-link uppercase text-white hover:text-amber-500 py-1">Contact</a>
-            <a href="https://hotel-website-uj63.onrender.com" class="block rounded-xl px-4 py-2 text-white hover:bg-white/10" target="_blank" rel="noopener noreferrer">Main Website</a>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-black shadow-inner">
+      <div class="p-4 flex flex-col gap-2.5 text-xs font-bold tracking-wider uppercase text-white">
+        <a href="#home" class="mobile-nav-link block py-2 px-3 text-white hover:bg-white/5 rounded-lg hover:text-amber-400 transition">Home</a>
+        <a href="#menu-catalog-section" class="mobile-nav-link block py-2 px-3 text-white hover:bg-white/5 rounded-lg hover:text-amber-400 transition">Menu</a>
+        <a href="#gallery" class="mobile-nav-link block py-2 px-3 text-white hover:bg-white/5 rounded-lg hover:text-amber-400 transition">Gallery</a>
+        <a href="#about" class="mobile-nav-link block py-2 px-3 text-white hover:bg-white/5 rounded-lg hover:text-amber-400 transition">About Us</a>
+        
+        <details class="group rounded-xl border border-white/5 bg-white/5 p-1">
+          <summary class="cursor-pointer py-2 px-3 select-none text-slate-200 hover:text-amber-400 list-none flex items-center justify-between">
+            Experience More <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-300 text-white group-open:rotate-180"></i>
+          </summary>
+          <div class="mt-1 flex flex-col gap-1.5 pl-4 pb-2 pt-1 normal-case tracking-normal font-medium text-slate-300 border-t border-white/5 mt-1">
+            <a href="#partners" class="mobile-nav-link text-white block py-1.5 hover:text-amber-400">Partners</a>
+            <a href="#offers" class="mobile-nav-link text-white block py-1.5 hover:text-amber-400">Offers</a>
+            <a href="#services" class="mobile-nav-link text-white block py-1.5 hover:text-amber-400">Services</a>
+            <a href="#contact" class="mobile-nav-link text-white block py-1.5 hover:text-amber-400">Contact Support</a>
+            <a href="https://hotel-website-uj63.onrender.com" class="block py-1.5 text-white font-bold" target="_blank" rel="noopener noreferrer">Main Website →</a>
           </div>
         </details>
       </div>
@@ -73,120 +82,144 @@
     {% block content %}{% endblock %}
   </main>
 
-  <section id="contact" class="pt-16 pb-8 bg-black text-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid gap-8 lg:grid-cols-3 items-start">
-          <div class="space-y-6">
-            <div class="flex items-center gap-4">
-              <a href="#" class="flex items-center gap-3">
-                <img src="/static/images/avyukt_logo.png" alt="AVYUKT VIEW" class="h-20 object-contain logo-img" onerror="this.style.display='none'" />
-              </a>
-              <div>
-                <div class="font-serif text-xl text-white">AVYUKT VIEW</div>
-                <div class="text-sm text-neutral-300">Hotel & Resort</div>
-              </div>
-            </div>
-            <p class="text-neutral-300 max-w-sm text-xs sm:text-sm leading-relaxed font-light">AVYUKT VIEW is a haven of luxury and tranquility, offering unparalleled experiences in stunning natural and urban settings.</p>
-            <div class="flex items-center gap-3">
-              <a href="#" class="social-icon bg-white text-black hover:bg-slate-200 rounded-full p-2.5 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.88v-6.99H7.898v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
-              <a href="#" class="social-icon bg-white text-black hover:bg-slate-200 rounded-full p-2.5 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 5.924a8.349 8.349 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.998A4.107 4.107 0 0 0 16.616 4c-2.266 0-4.104 1.835-4.104 4.1 0 .322.036.636.106.936-3.41-.171-6.436-1.804-8.462-4.287a4.09 4.09 0 0 0-.556 2.063c0 1.423.725 2.678 1.827 3.413a4.086 4.086 0 0 1-1.859-.513v.052c0 1.987 1.414 3.644 3.291 4.019a4.135 4.135 0 0 1-1.853.07c.522 1.624 2.037 2.807 3.833 2.84A8.237 8.237 0 0 1 2 19.54 11.616 11.616 0 0 0 8.29 21c7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53A8.36 8.36 0 0 0 22 5.924z"/></svg></a>
-              <a href="#" class="social-icon bg-white text-black hover:bg-slate-200 rounded-full p-2.5 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3H4.385A1.385 1.385 0 0 0 3 4.385v15.23A1.385 1.385 0 0 0 4.385 21h15.23A1.385 1.385 0 0 0 21 19.615V4.385A1.385 1.385 0 0 0 19.615 3zM8.853 18.169H6.54V9.633h2.313v8.536zM7.697 8.496a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM18.169 18.169h-2.312v-4.176c0-1-.018-2.29-1.396-2.29-1.397 0-1.61 1.091-1.61 2.218v4.248h-2.312V9.633h2.22v1.167h.032c.31-.588 1.068-1.205 2.199-1.205 2.352 0 2.787 1.548 2.787 3.562v4.013z"/></svg></a>
-            </div>
-          </div>
-
-          <div class="space-y-4 text-left">
-            <h4 class="text-xl font-semibold text-white font-serif tracking-wide">Get in touch</h4>
-            <div class="space-y-4 text-neutral-300 text-xs sm:text-sm">
-              <div class="flex items-start gap-4">
-                <i class="fa-solid fa-envelope text-amber-400 mt-1.5 text-base"></i>
-                <div>
-                  <div class="text-xs opacity-60">Email Address</div>
-                  <a href="mailto:{{ contact.email }}" class="text-white hover:underline font-medium">{{ contact.email }}</a>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <i class="fa-solid fa-phone text-amber-400 mt-1.5 text-base"></i>
-                <div>
-                  <div class="text-xs opacity-60">Phone Support</div>
-                  <a href="tel:{{ contact.phone | replace(' ', '') }}" class="text-white hover:underline font-medium">{{ contact.phone }}</a>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <i class="fa-solid fa-location-dot text-amber-400 mt-1.5 text-base"></i>
-                <div>
-                  <div class="text-xs opacity-60">Destination Resort Location</div>
-                  <div class="text-neutral-300 font-medium leading-relaxed">{{ contact.address }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-4 text-left">
-            <h4 class="text-xl font-semibold text-white font-serif tracking-wide">Sign up our newsletter</h4>
-            <p class="text-xs sm:text-sm text-neutral-300 font-light">Get update information, news and free insight.</p>
-            {% if subscribe_success == '1' %}
-            <div class="mb-2 rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-xs text-emerald-700 font-medium">Thanks! We'll keep you updated.</div>
-            {% elif subscribe_success == '0' %}
-            <div class="mb-2 rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs text-rose-700 font-medium">Enter a valid email address to subscribe.</div>
+  <section id="contact" class="pt-16 pb-8 bg-black text-white border-t border-white/5">
+    <div class="w-full max-w-[70%] sm:max-w-[55%] md:max-w-6xl md:px-6 mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-start">
+        
+        <div class="space-y-4 text-left">
+          <div class="flex items-center gap-3.5">
+            {% if logo_image %}
+              <img src="{{ logo_image or '/static/images/avyukt_logo.png' }}" alt="AVYUKT VIEW" class="h-12 object-contain rounded-xl bg-white/[0.03] p-1 border border-white/[0.08]" onerror="this.style.display='none'" />
+            {% else %}
+              <img src="/static/images/avyukt_logo.png" alt="AVYUKT VIEW" class="h-12 object-contain rounded-xl bg-white/[0.03] p-1 border border-white/[0.08]" onerror="this.style.display='none'" />
             {% endif %}
-            <form action="/subscribe" method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
-              <input name="name" type="text" placeholder="Name" class="w-full border border-neutral-800 rounded-xl p-3 bg-neutral-900 text-white text-xs focus:outline-none focus:border-amber-500" />
-              <input name="email" type="email" placeholder="Email" class="w-full border border-neutral-800 rounded-xl p-3 bg-neutral-900 text-white text-xs focus:outline-none focus:border-amber-500" required />
-              <button type="submit" class="sm:col-span-2 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl py-3.5 text-xs transition-colors flex items-center justify-center gap-2 uppercase tracking-wider shadow-md"><i class="fa-solid fa-paper-plane text-[10px]"></i> Sign Up</button>
-            </form>
-            <p class="text-[10px] opacity-40 mt-2">We respect your privacy. Unsubscribe at any time.</p>
+            <div>
+              <div class="font-serif text-base text-white tracking-wide font-medium">AVYUKT VIEW</div>
+              <div class="text-[8px] text-amber-500 uppercase tracking-[0.25em] font-mono mt-0.5">Hotel & Resort</div>
+            </div>
+          </div>
+          <p class="text-neutral-300 text-xs leading-relaxed font-light">AVYUKT VIEW is a haven of luxury and tranquility, offering unparalleled experiences in stunning natural and urban settings.</p>
+          <div class="flex items-center gap-3 pt-1">
+            <a href="#" class="text-slate-400 hover:text-amber-400 transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+            <a href="#" class="text-slate-400 hover:text-amber-400 transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
+            <a href="#" class="text-slate-400 hover:text-amber-400 transition-colors"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-left">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider font-sans border-b border-white/5 pb-1.5">Get in touch</h4>
+          <div class="space-y-3.5 text-neutral-300 text-xs">
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12v6M8 12v6M3 8h18M3 8l4-5h10l4 5M3 8v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8"/></svg>
+              <div>
+                <div class="text-[9px] uppercase font-mono tracking-wider opacity-40 mb-0.5">Email Support</div>
+                <a href="mailto:{{ contact.email }}" class="text-white hover:underline transition-colors hover:text-amber-400 font-medium">{{ contact.email }}</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l.4 2M7 13h10l1 4H6l1-4zM16 5l1 3M8 5l1 3M3 8h18"/></svg>
+              <div>
+                <div class="text-[9px] uppercase font-mono tracking-wider opacity-40 mb-0.5">Phone Line</div>
+                <a href="tel:{{ contact.phone | replace(' ', '') }}" class="text-white hover:underline transition-colors hover:text-amber-400 font-medium">{{ contact.phone }}</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13 21.314l-4.657-4.657A8 8 0 1117.657 16.657z"/></svg>
+              <div>
+                <div class="text-[9px] uppercase font-mono tracking-wider opacity-40 mb-0.5">Location</div>
+                <div class="text-neutral-300 font-medium leading-relaxed">{{ contact.address }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-left">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider font-sans border-b border-white/5 pb-1.5">Our Newsletter</h4>
+          <p class="text-xs text-neutral-300 font-light">Get update information, news and free insight privileges.</p>
+          
+          {% if subscribe_success == '1' %}
+            <div class="rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-2.5 text-xs text-emerald-400 font-bold">Thanks! We'll keep you updated.</div>
+          {% elif subscribe_success == '0' %}
+            <div class="rounded-xl border border-rose-500/20 bg-rose-500/10 p-2.5 text-xs text-rose-400 font-bold font-mono">Enter a valid email address.</div>
+          {% endif %}
+          
+          <form action="/subscribe" method="POST" class="flex flex-col gap-2">
+            <input name="name" type="text" placeholder="Name" class="w-full border border-white/10 rounded-xl p-2.5 bg-neutral-900 text-white text-xs focus:outline-none focus:border-amber-400 transition-all font-medium" />
+            <input name="email" type="email" placeholder="Email" class="w-full border border-white/10 rounded-xl p-2.5 bg-neutral-900 text-white text-xs focus:outline-none focus:border-amber-400 transition-all font-sans" required />
+            <button type="submit" class="bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl py-2.5 text-xs transition-colors flex items-center justify-center gap-1.5 uppercase tracking-wider shadow-md w-full"><i class="fa-solid fa-paper-plane text-[9px]"></i> Sign Up</button>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-900 text-white py-5 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm opacity-70">© 2026 AVYUKT VIEW. All rights reserved.</div>
+  </footer>
+
+  <div id="chat-open-btn" class="fixed right-6 bottom-6 md:bottom-10 z-50 bg-slate-900 border border-slate-800 hover:bg-amber-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center cursor-pointer transition-all duration-300 transform scale-100 opacity-100 hover:scale-105 group" title="Chat with us">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+  </div>
+
+  <div id="chat-widget" class="hidden fixed right-6 bottom-24 md:bottom-28 z-50 w-[90vw] sm:w-85 md:w-[380px] bg-white rounded-2xl shadow-[0_20px_50px_rgba(15,23,42,0.15)] border border-slate-200 overflow-hidden transition-all duration-300 transform scale-95 opacity-0">
+    <div onclick="minimizeChatWidgetManually()" class="relative flex items-center justify-between p-4 bg-slate-900 border-b border-slate-800 cursor-pointer select-none">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-amber-600/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+          <svg xmlns="http://www.w3.org/2000/xl" class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h.01M15 9h.01M10 14h4" />
+          </svg>
+        </div>
+        <div class="text-left">
+          <div class="font-serif font-bold text-sm tracking-wide text-white">AVYUKT VIEW</div>
+          <div class="text-[10px] text-emerald-400 flex items-center gap-1 mt-0.5 font-bold">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span> Virtual Concierge
           </div>
         </div>
       </div>
-    </section>
-
-  <footer class="bg-neutral-950 text-white py-5 border-t border-neutral-900">
-    <div class="max-w-6xl mx-auto px-6 text-center text-xs opacity-50">© <span id="year">2026</span> AVYUKT VIEW. All rights reserved.</div>
-  </footer>
- <div id="chat-open-btn" class="fixed right-6 bottom-6 md:bottom-10 z-50 bg-amber-600 hover:bg-amber-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center cursor-pointer transition-all duration-300 transform scale-100 opacity-100 hover:scale-110" title="Chat with us">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-    </svg>
-</div>
-
- <div id="chat-widget" class="hidden fixed right-6 bottom-24 md:bottom-28 z-50 w-[88vw] sm:w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200/80 overflow-hidden transition-all duration-300 transform scale-95 opacity-0">
-    
-    <div onclick="minimizeChatWidgetManually()" class="relative flex items-center justify-between p-4 bg-[#0f172a] text-white border-b border-amber-500/20 cursor-pointer select-none" title="Click header to close">
-        <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-400 flex items-center justify-center text-amber-400 shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h.01M15 9h.01M10 14h4" />
-                </svg>
-            </div>
-            <div class="text-left">
-                <div class="font-serif font-semibold text-sm tracking-wide text-white">AVYUKT VIEW</div>
-                <div class="text-[10px] text-emerald-400 flex items-center gap-1 mt-0.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span> Virtual Concierge
-                </div>
-            </div>
-        </div>
-        
-        <div onclick="event.stopPropagation(); minimizeChatWidgetManually()" class="absolute top-3 right-3 w-7 h-7 bg-white/10 hover:bg-amber-600 text-white rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer shadow-sm z-10" aria-label="Close Chat">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </div>
+      <div onclick="event.stopPropagation(); minimizeChatWidgetManually()" class="absolute top-3.5 right-3.5 w-6 h-6 bg-white/10 hover:bg-rose-600 text-white rounded-lg flex items-center justify-center transition-all duration-200 cursor-pointer shadow-sm z-10" aria-label="Close Chat">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
     </div>
-    
-    <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-slate-50 text-xs space-y-3 custom-scroll text-left">
-        </div>
-    
+    <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-slate-50/50 text-xs space-y-3.5 custom-scroll text-left"></div>
     <form id="chat-form" class="p-3 border-t border-slate-100 bg-white flex items-center gap-2">
-        <input id="chat-input" name="message" type="text" placeholder="Ask about bookings, menu, or tables..." class="flex-1 border border-slate-200 bg-slate-50 text-xs p-3 rounded-xl focus:outline-none focus:border-amber-500 text-gray-900 shadow-inner" required autocomplete="off" />
-        
-        <button type="submit" class="bg-slate-900 hover:bg-amber-600 text-white w-10 h-10 rounded-xl transition-all duration-200 shadow-sm flex items-center justify-center shrink-0 active:scale-95" aria-label="Send Message">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white transform rotate-45 -translate-x-0.5 translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
-        </button>
+      <input id="chat-input" name="message" type="text" placeholder="Ask about bookings, menu, or tables..." class="flex-1 border border-slate-200 bg-slate-50 text-xs p-3 rounded-xl focus:outline-none focus:border-amber-600 text-gray-900 shadow-inner font-medium" required autocomplete="off" />
+      <button type="submit" class="bg-slate-900 hover:bg-amber-600 text-white w-10 h-10 rounded-xl transition-all duration-200 shadow-sm flex items-center justify-center shrink-0 active:scale-95">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white transform rotate-45 -translate-x-0.5 translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+        </svg>
+      </button>
     </form>
-</div>
+  </div>
+
   <script src="/static/js/app.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuBlock = document.getElementById('moreDropdown');
+        const internalLinks = document.querySelectorAll('.menu-close-link');
+
+        internalLinks.forEach(linkElement => {
+            linkElement.addEventListener('click', () => {
+                if (menuBlock) {
+                    // Force the hover tray closed instantly upon anchor click
+                    menuBlock.style.display = 'none';
+                    
+                    // Unbind the manual block style immediately once the user exits the header zone
+                    menuBlock.parentElement.addEventListener('mouseleave', function resetStyle() {
+                        menuBlock.style.display = '';
+                        menuBlock.parentElement.removeEventListener('mouseleave', resetStyle);
+                    });
+                }
+            });
+        });
+    });
+  </script>
+  
   {% block extra_scripts %}{% endblock %}
 </body>
 </html>
